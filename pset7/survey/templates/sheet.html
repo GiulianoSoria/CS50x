@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+  <h1 class="mb-3">Sheet</h1>
+
+  <table class="table table-hover">
+    <thead class="thead-dark">
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Favourite Team</th>
+        <th>Preferred position</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      {% for applicant in applicants %}
+
+      <tr>
+        <td>{{ applicant["name"] }}</td>
+        <td>{{ applicant["email"] }}</td>
+        <td>{{ applicant["team"] }}</td>
+        <td>{{ applicant["position"] }}</td>
+      </tr>
+
+      {% endfor %}
+
+    </tbody>
+  </table>
+
+{% endblock %}

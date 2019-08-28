@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Contact
+{% endblock %}
+
+{% block main %}
+  <figure class="figure">
+      <img src="https://i.imgur.com/DyxyhNI.png" class="figure-img img-fluid" alt="" title="source: imgur.com" />
+  </figure>
+  <hr class="my-4">
+  <form>
+    <div class="form-group row align-items-center">
+      <label for="validationServer01" class="col-2 col-form-label">First name</label>
+      <div class="col-auto">
+        <input type="text" class="form-control is-invalid" id="validationServer01" placeholder="First name" required>
+      </div>
+      <div class="invalid-feedback">
+        Doesn't look good!
+      </div>
+    </div>
+    <div class="form-group row align-items-center">
+      <label for="validationServer02" class="col-2 col-form-label">Last name</label>
+      <div class="col-auto">
+        <input type="text" class="form-control is-invalid" id="validationServer02" placeholder="Last name" required>
+      </div>
+      <div class="invalid-feedback">
+        Doesn't look good!
+      </div>
+    </div>
+    <div class="form-group row align-items-center">
+      <label for="validationServerUsername" class="col-2 col-form-label">Email</label>
+        <div class="col-auto">
+          <input type="email" class="form-control is-invalid" id="validationServerUsername" placeholder="Email" aria-describedby="inputGroupPrepend3" required>
+        </div>
+        <div class="invalid-feedback">
+          Please provide a valid email.
+        </div>
+    </div>
+    <div class="form-group row align-items-center">
+      <label for="validationServer03" class="col-2 col-form-label">Contact Number</label>
+      <div class="col-auto">
+        <input type="text" class="form-control is-invalid" id="validationServer03" placeholder="Contact Number" required>
+      </div>
+      <div class="invalid-feedback">
+        Please provide a valid contact number.
+      </div>
+    </div>
+    <div class="form-group row align-items-center">
+      <label for="validationServer04" class="col-2 col-form-label">Subject</label>
+      <div class="col-auto">
+        <input type="text" class="form-control is-invalid" id="validationServer04" placeholder="Subject" required>
+      </div>
+      <div class="invalid-feedback">
+        Please provide a valid subject.
+      </div>
+    </div>
+    <div class="form-group row align-items-center">
+      <label for="validationServer05" class="col-2 col-form-label">Message</label>
+      <div class="col-auto">
+        <input type="text" class="form-control is-invalid" id="validationServer05" placeholder="Message" required>
+      </div>
+      <div class="invalid-feedback">
+        Please provide a valid message.
+      </div>
+    </div>
+
+  <button class="btn btn-primary align-items-center" type="submit">Submit</button>
+</form>
+
+{% endblock %}

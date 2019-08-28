@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+    <form action="/register" method="post" id="form">
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" id="username" name="username" placeholder="Username" type="text">
+            <div class="invalid-feedback">Username already exists</div>
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="password" placeholder="Password" type="password" required>
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="confirmation" placeholder=" Confirm password" type="password" required>
+        </div>
+        <button class="btn btn-primary" type="submit">Register</button>
+    </form>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+
+        let form = document.getElementById("form");
+
+        $(form).submit(function(event)
+        {
+            let username = document.getElementById("username").value;
+            event.preventDefault();
+
+            $.get("/check?username=" + username, function(result)
+            {
+                console.log(username);
+                console.log(result);
+                if (result == false)
+                {
+                    alert("Username is not available!");
+                    return false;
+                }
+                else
+                {
+                    console.log("Username available!");
+                    form.submit();
+                    return true;
+                }
+            });
+        });
+
+    </script>
+{% endblock %}

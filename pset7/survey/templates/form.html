@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+    <!-- http://getbootstrap.com/docs/4.1/content/typography/ -->
+    <h1 class="mb-3">Form</h1>
+
+    <!-- http://getbootstrap.com/docs/4.1/components/forms/ -->
+    <form action="/form" method="post">
+        <div>
+          <input id="name" name="name" autocomplete="off" type="text" placeholder="Name" class="form-control"><br>
+          <input id="email" name="email" autocomplete="off" type="text" placeholder="example@email.com" class="form-control"><br>
+        </div>
+        <div>
+          <select id="team" name="team" class="form-control">
+              <option selected disabled value="">Club</option>
+              <option value="Arsenal">Arsenal FC</option>
+              <option value="Chelsea">Chelsea FC</option>
+              <option value="Liverpool">Liverpool FC</option>
+              <option value="ManUtd">Manchester United</option>
+              <option value="ManCity">Manchester City</option>
+              <option value="Spurs">Tottenham Hotspur</option>
+          </select><br>
+        </div>
+        <div>
+          <fieldset id="" class="form-group">
+              <div class="row">
+                <legend class="col-form-label col-sm-2 pt-0">Preferred position:</legend>
+                <div class="col-sm-10">
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="position" id="goalkeeper" value="Goalkeeper">
+                    <label class="form-check-label" for="goalkeeper">Goalkeeper</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="position" id="defender" value="Defender">
+                    <label class="form-check-label" for="defender">Defender</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="position" id="midfielder" value="Midfielder">
+                    <label class="form-check-label" for="midfielder">Midfielder</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="position" id="forward" value="Forward">
+                    <label class="form-check-label" for="forward">Forward</label>
+                  </div>
+              </div>
+          </fieldset><br>
+        </div>
+        <button class="btn btn-outline-primary btn-block" type="submit">Submit</button>
+    </form>
+
+    <script>
+
+         document.querySelector('form').onsubmit = function() {
+            if (!document.querySelector('#name').value) {
+                alert('You must provide your name!');
+                return false;
+            }
+            else if (!document.querySelector('#email').value) {
+                alert('You must provide your email!');
+                return false;
+            }
+            else if (!document.querySelector('#team').value) {
+                alert('You must choose your favourite team!');
+                return false;
+            }
+            else if (!document.querySelector('position').value) {
+                alert('You must select your preferred position!');
+                return false;
+            }
+            return true;
+        };
+
+    </script>
+
+{% endblock %}

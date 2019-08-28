@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Reservations
+{% endblock %}
+
+{% block main %}
+    <figure class="figure">
+        <img src="https://i.imgur.com/DyxyhNI.png" class="figure-img img-fluid" alt="" title="source: imgur.com" />
+    </figure>
+    <hr class="my-4">
+
+    <div class="row">
+        <div class="col-sm-8" id="googleMap" style="width:70%;height:400px;">
+        </div>
+        <div class="col-sm-4">
+            <p>Address: 143 Santa Cristina St. - H.D. Pando, Lima, Peru</p>
+            <p>Cellphone: +51 981 500 791</p>
+            <p>Opening Hours:</p>
+            <p>Monday: 11:30 - 16:00</p>
+            <p>Tuesday: 11:30 - 16:00</p>
+            <p>Wednesday: 11:30 - 16:00</p>
+            <p>Thursday: 11:30 - 16:00</p>
+            <p>Friday: 11:30 - 16:00</p>
+            <p>Saturday: 11:30 - 16:00</p>
+            <p>Sunday: 11:30 - 16:00</p>
+        </div>
+    </div>
+    <script>
+        // Initialize and add the map
+        function initMap() {
+            // The location of Huarique
+            var huarique = {lat: -12.0616805, lng: -77.0767108};
+            // The map, centered at Huarique
+            var map = new google.maps.Map(
+              document.getElementById('googleMap'), {zoom: 15, center: huarique});
+            // The marker, positioned at Huarique
+            var marker = new google.maps.Marker({position: huarique, map: map});
+        }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAj5IT14LSicw1xvW6lcUz2rCg5CniM6B0&callback=initMap">
+    </script>
+
+{% endblock %}
